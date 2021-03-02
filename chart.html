@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <canvas id="myCanvas" width="800" height="400"
+  <canvas id="myCanvas" width="800" height="600"
   style="border:1px solid blueviolet;">
   Your browser does not support the canvas element.
   </canvas>
@@ -10,14 +10,23 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
+
 var fruit = [
-	{name:"Apple", quantity:20, color:"red"},
-	{name:"Orange", quantity:10, color:"orange"},
-  {name:"banana", quantity:15, color:"yellow"},
-	{name:"Kiwi", quantity:3, color:"green"},
-  {name:"Blueberry", quantity:5, color:"blue"},
-	{name:"Grapes", quantity:8, color:"purple"},
+
+{name:"Apple", quantity:20, color:"red"},
+
+{name:"Orange", quantity:10, color:"orange"},
+
+{name:"Banana", quantity:15, color:"yellow"},
+
+{name:"Kiwi", quantity:3, color:"green"},
+
+{name:"Blueberry", quantity:5, color:"blue"},
+
+{name:"Grapes", quantity:8, color:"purple"}
+
 ];
+
 
 function drawRectangle(x,y,length,width,color){
   ctx.fillStyle=color;
@@ -31,12 +40,11 @@ function drawFont(text,font,color, x,y){
   ctx.textAlign = "center";
   ctx.fillText(text, x, y);
 }
-var width=50;
-var x=60;
-for(var i=0;i<fruit.height;i++){
-  drawRectangle(x,canvas.height-fruit.quantity[i], width, fruit.quantity[i],fruit.color[i])
-  drawFont(fruits.name[i],'18px Arial','black',x,canvas.height-fruit.quantity[i]);
-  x+=width+15;
+
+for(var i=0; i<fruit.length;i++){
+  drawRectangle(i*100,500, 100, fruit[i].quantity*10,fruit[i].color);
+  drawFont(fruit[i].name,'18px Arial','black',(i*110)+20,550);
+  drawFont(fruit[i].quantity, '18px Arial','black',(i*110)+30,580);
 }
 </script>
 
