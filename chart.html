@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <canvas id="myCanvas" width="800" height="600"
+  <canvas id="myCanvas" width="650" height="400"
   style="border:1px solid blueviolet;">
   Your browser does not support the canvas element.
   </canvas>
@@ -42,9 +42,9 @@ function drawFont(text,font,color, x,y){
 }
 
 for(var i=0; i<fruit.length;i++){
-  drawRectangle(i*100,500, 100, fruit[i].quantity*10,fruit[i].color);
-  drawFont(fruit[i].name,'18px Arial','black',(i*110)+20,550);
-  drawFont(fruit[i].quantity, '18px Arial','black',(i*110)+30,580);
+  drawRectangle(i*110,0, 110, fruit[i].quantity*17,fruit[i].color);
+  drawFont(fruit[i].name,'18px Arial','black',(i*110)+40,30);
+  drawFont(fruit[i].quantity, '18px Arial','black',(i*110)+40,50);
 }
 </script>
 
