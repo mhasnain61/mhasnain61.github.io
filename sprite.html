@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down</title>
+    <style>
+        body {
+            background-color: blue;
+        }
+
+        canvas { 
+            background-color: white;
+            border: 1px solid black;
+            padding: 0;
+            margin: auto;
+            display: block;
+            width: 200px;
+        }
+
+        button{ 
+            font-size: 60px;
+            background-color: cyan;
+            color:darkgrey;
+            margin: auto;
+            padding: 0px;
+            display: block;
+            width: 200px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="200" height="150"></canvas>
+    <button onClick="startC()">Start</button>
+    <script>
+        var canvas=document.getElementById("myCanvas");
+        var ctx=canvas.getContext("2d");
+        var spriteSheet = new Image();
+        spriteSheet.src= "spritesheet.png"
+        var numberWidth=100;
+        var numberHeight=150;
+
+        window.onload=function(){
+            ctx.drawImage(spriteSheet,0,0,100,150,50,0,100,150);
+        }
+        
+        function startC() {
+            var i=0;
+            setInterval(function(){
+                if(i>=10){
+                    ctx.clearRect(0,0,200,150);
+                    ctx.drawImage(spriteSheet,0,0,100,150,0,0,100,150);
+                    ctx.drawImage(spriteSheet,0,0,100,150,100,0,100,150);
+                }else{
+                    ctx.clearRect(0,0,200,150);
+                    ctx.drawImage(spriteSheet,200*i,0,200,300,50,0,100,150);
+                }
+                i++;
+                }, 500);
+
+            }
+    </script>
+</body>
+</html>
