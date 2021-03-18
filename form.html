@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="get">
+  <label for="title">Title:</label>
+  <input type="text" id="title" placeholder="Enter Title" maxlength="40"><br><br>
+  <p>Enter Your Notes:</p>
+<textarea id="myInput" type=text name="notes" oninput="myFunction()" rows="10" cols="80"></textarea>
+<p>
+  <button id="clear" type="button" onClick="Reset()" value="Reset">Clear Notes</button>
+</p>
+</form>
+<script>
+  var title=document.getElementById("title");
+  var notes = document.getElementById("myInput");
+  var clearButton=document.getElementById("clear");
+  
+  notes.oninput=function(){
+    setValue();
+  }
+
+  window.onload=function(){
+    title.value=localStorage.getItem("title");
+    notes.value=localStorage.getItem("myInput");
+  }
+  
+  function Reset(){
+    document.getElementById("clear").reset();
+    window.localStorage.clear();
+    
+  }
+
+  function setValue(){
+    localStorage.setItem("title",title.value);
+    localStorage.setItem("notes",myInput.value)
+  }
+  
+
+</script>
+
+</body>
+</html>

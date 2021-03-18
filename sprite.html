@@ -41,6 +41,7 @@
         var ctx=canvas.getContext("2d");
         var spriteSheet = new Image();
         spriteSheet.src= "spritesheet.png"
+        sheet_J="spritesheet.json"
         var numberWidth=100;
         var numberHeight=150;
 
@@ -53,16 +54,18 @@
             setInterval(function(){
                 if(i>=10){
                     ctx.clearRect(0,0,200,150);
-                    ctx.drawImage(spriteSheet,0,0,100,150,0,0,100,150);
+                    ctx.drawImage(spriteSheet,);
                     ctx.drawImage(spriteSheet,0,0,100,150,100,0,100,150);
                 }else{
                     ctx.clearRect(0,0,200,150);
                     ctx.drawImage(spriteSheet,200*i,0,200,300,50,0,100,150);
                 }
                 i++;
-                }, 500);
+                },);
 
             }
     </script>
 </body>
 </html>
+
+
