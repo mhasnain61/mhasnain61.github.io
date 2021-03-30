@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <canvas id="myCanvas" width="800" height="400"
+  style="border:1px solid blueviolet;">
+  Your browser does not support the canvas element.
+  </canvas>
+<script>
+    var canvas=document.getElementById("myCanvas");
+    var ctx=canvas.getContext("2d");
+    var spritesheet=new Image();
+    spritesheet.src='assets/animationimg.png';
+
+    spritesheet.onload=function(){
+        init();
+    }
+    spritedata='assets/animationlab.json';
+
+    const width=184;
+    const height=325;
+    const scaledWidth = width;
+    const scaledHeight = height;
+    const xloc= 0;
+
+    function drawFrame(frameX, frameY, canvasX, canvasY) {
+        ctx.drawImage(spritesheet,
+                frameX * width, frameY * height, width, height,
+                canvasX, canvasY, scaledWidth, scaledHeight);
+}
+
+function init() {
+  drawFrame(1, 1, scaledWidth, 0);
+  drawFrame(187,1, scaledWidth, 0);
+  drawFrame(373, 1, scaledWidth , 0);
+  drawFrame(1, 328, scaledWidth , 0);
+  drawFrame(187, 328, scaledWidth , 0);
+  drawFrame(373, 328, scaledWidth , 0);
+  drawFrame(559, 1, scaledWidth , 0);
+  drawFrame(559, 328, scaledWidth , 0);
+}
+
+window.requestAnimationFrame(step);
+const cycleLoop=[0,1,0,2,0,3];
+let currentLoopIndex=0;
+let frameCount=0;
+let currentDirection=0;
+
+function step(){
+    frameCount++;
+    if(frameCount<15){
+        window.requestAnimationFrame(step);
+        return;
+    }
+    frameCount=0;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    drawFrame(cycleLoop[currentLoopIndex],currentDirection,0,0);
+    currentLoopIndex++;
+    if(currentLoopIndex>=cycleLoop.length){
+        currentLoopIndex=0;
+        currentDirection++;
+    }
+    if(currentDirection>=2){
+        currentDirection=0;
+    }
+    window.requestAnimationFrame(step);
+}
+</script>
+
+</body > 
+</html>
