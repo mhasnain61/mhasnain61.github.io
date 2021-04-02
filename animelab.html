@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <canvas id="myCanvas" width="800" height="400"
+  <canvas id="myCanvas" width="800" height="320"
   style="border:1px solid blueviolet;">
   Your browser does not support the canvas element.
   </canvas>
 <script>
     var canvas=document.getElementById("myCanvas");
     var ctx=canvas.getContext("2d");
+    var textbubble=new Image();
+    textbubble.src= 'assets/textbubble.png'
+    var sun=new Image();
+    sun.src= 'assets/sun.png'
+    var pharmacy= new Image();
+    pharmacy.src='assets/pharmarcy.jpg';
     var spritesheet=new Image();
     spritesheet.src='assets/animationimg.png';
 
@@ -18,14 +24,28 @@
 
     const width=184;
     const height=325;
-    const scaledWidth = width;
-    const scaledHeight = height;
+    const scaledWidth = 100;
+    const scaledHeight = 200;
     const xloc= 0;
 
     function drawFrame(frameX, frameY, canvasX, canvasY) {
         ctx.drawImage(spritesheet,
                 frameX * width, frameY * height, width, height,
-                canvasX, canvasY, scaledWidth, scaledHeight);
+                0, 115, scaledWidth, scaledHeight);
+        ctx.drawImage(pharmacy,500,70,250,250);
+        ctx.fillStyle='rgba(25,181,254,1';
+        ctx.fillRect(0,0,800,100);
+        ctx.beginPath();
+        ctx.arc(750, 50, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle='green';
+        ctx.fillRect(0,300,500,100)
+        ctx.drawImage(textbubble,100,75, 150,100);
+        ctx.fillStyle='black';
+        ctx.font='13pt Calibri'
+        ctx.fillText("Vaccination Time!",115,124);
 }
 
 function init() {
