@@ -3,10 +3,10 @@
 <body>
 
 <form action="get">
-  <label for="title">Title:</label>
+  <label for="title"><b>Title:</b></label>
   <input type="text" id="title" placeholder="Enter Title" maxlength="40"><br><br>
-  <p>Enter Your Notes:</p>
-<textarea id="myInput" type=text name="notes" oninput="myFunction()" rows="10" cols="80"></textarea>
+  <p><b>Enter Your Notes:</p></b>
+<textarea id="myInput" type=text placeholder='Start typing your notes' name="notes" oninput="myFunction()" rows="10" cols="80"></textarea>
 <p>
   <button id="clear" type="button" onClick="Reset()" value="Reset">Clear Notes</button>
 </p>
@@ -24,11 +24,11 @@
     title.value=localStorage.getItem("title");
     notes.value=localStorage.getItem("myInput");
   }
-  
-  function Reset(){
-    document.getElementById("clear").reset();
-    window.localStorage.clear();
-    
+
+ clearButton.onclick=function(){
+    title.value='';
+    notes.value='';
+    setValue();
   }
 
   function setValue(){
