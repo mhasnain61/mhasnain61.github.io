@@ -42,11 +42,13 @@
         var spriteSheet = new Image();
         spriteSheet.src= "assets/spritesheet.png"
         sheet_J="assets/spritesheet.json"
-        var numberWidth=100;
-        var numberHeight=150;
+        const numberWidth=120;
+        const numberHeight=175;
 
-        window.onload=function(){
-            ctx.drawImage(spriteSheet,0,0,100,150,50,0,100,150);
+        function drawFrame(frameX, frameY, canvasX, canvasY) {
+        ctx.drawImage(spritesheet,
+                frameX * width, frameY * height, width, height,
+                100, 50);
         }
         
         function startC() {

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div style='width:50%'></div>
+    <canvas id="bar" width="1" height="1"></canvas>
+  </div>
+  <div style='width:50%'></div>
+    <canvas id="doughnut" width="1" height="1"></canvas>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+
+new Chart(document.getElementById("bar"), {
+    type: 'bar',
+    data: {
+      labels: ["11-23-2020","11-24-2020","11-25-2020", "11-26-2020", "11-27-2020", "11-28-2020", "11-29-2020", "11-30-2020","12-1-2020","12-2-2020"],
+      datasets: [
+        {
+          label: "Case Count",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","green","yellow","orange","brown","grey"],
+          data: [2230,1980,2250,736,2162,1712,1622,2580,2665,2087]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Covid 19 Cases Count NYC-Muhammad Hasnain'
+      }
+    }
+});
+
+new Chart(document.getElementById("doughnut"), {
+    type: 'doughnut',
+    data: {
+      labels: ["11-23-2020","11-24-2020","11-25-2020", "11-26-2020", "11-27-2020", "11-28-2020", "11-29-2020", "11-30-2020","12-1-2020","12-2-2020"],
+      datasets: [
+        {
+          label: "Case Count",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","green","yellow","orange","brown","grey"],
+          data: [2230,1980,2250,736,2162,1712,1622,2580,2665,2087]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Covid 19 Cases Count NYC-Muhammad Hasnain'
+      }
+    }
+});
+
+</script>
+
+</body > 
+</html>
