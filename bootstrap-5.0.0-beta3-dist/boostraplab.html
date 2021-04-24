@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap Lab</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
+        body {
+            margin: 30px;
+        }
+
+        .my-container {
+            border: 1px solid blue;
+        }
+
+        .my-row {
+            border: 3px solid blueviolet;
+            height: 200px;
+        }
+
+        .my-col {
+            border: 3px solid black;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand" href="bootraplab.html">Muhammad Hasnain</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="summary.html">Summary <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experience.html">Work Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="skills.html">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activities.html">Activities</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col 4 my-col">
+                Name: Muhammad Hasnain<br><br>         Email Address: mhasnain9599@gmail.com <br><br>          Cell Phone: 989-548-7415
+            </div>
+    </div>
+</body>
+<script> 
+$(document).ready(function() {
+  $(".dropdown-toggle").dropdown();
+});
+</script>
+
+</html>
