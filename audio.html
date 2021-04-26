@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<audio id="myAudio">
+  <source src="assets/Captain America - I Can Do This All Day Compilation Steve Rogers.mp3" type="audio/ogg">
+</audio>
+
+<audio id="myAudio2">
+  <source src="assets/Justin Bieber - Peaches ft. Daniel Caesar, Giveon.mp3" type="audio/ogg">
+</audio>
+
+<audio id="myAudio3">
+  <source src="assets/All The Dark Knight Joker Laughs.mp3" type="audio/ogg">
+</audio>
+
+<audio id="myAudio4">
+  <source src="assets/I Am Legend - Dammit Fred!!.mp3" type="audio/ogg">
+</audio>
+
+<audio id="myAudio5">
+  <source src="assets/Tobey Maguire Spider-Man jokes (Quips and funny moments).mp3" type="audio/ogg">
+</audio>
+
+<p>Play Whichever You'd Like:</p>
+
+<button style="background-color:blue" onclick="playAudio()" type="button">I Can Do This All Day-Steve Rogers</button>
+<button style="background-color:blue" onclick="pauseAudio()" type="button">Pause Steve Rogers</button><br> 
+
+<button style="background-color:yellow" onclick="playAudio2()" type="button">Play Peaches by Justin Bieber</button>
+<button style="background-color:yellow" onclick="pauseAudio2()" type="button">Pause Peaches by Justin Bieber</button><br>
+
+<button style="background-color:green" onclick="playAudio3()" type="button">Listen to the Best Actor who Played the Joker</button>
+<button style="background-color:green" onclick="pauseAudio3()" type="button">Make Joker Stop Laughing</button><br>
+
+<button style="background-color:whitesmoke" onclick="playAudio4()" type="button">Play Will Smith from I Am Legend</button>
+<button style="background-color:whitesmoke" onclick="pauseAudio4()" type="button">Pause Will Smith from I Am Legend</button><br>
+
+<button style="background-color:red" onclick="playAudio5()" type="button">Listen to Tobey Maguire as Spider-Man</button>
+<button style="background-color:red" onclick="pauseAudio5()" type="button">Pause Tobey Maguire as Spider-Man</button><br>
+
+<script>
+var x = document.getElementById("myAudio"); 
+var y = document.getElementById("myAudio2");
+var z = document.getElementById("myAudio3");
+var a = document.getElementById("myAudio4");
+var b = document.getElementById("myAudio5"); 
+
+function playAudio() { 
+  x.play(); 
+}
+
+function playAudio2() { 
+  y.play(); 
+} 
+
+function playAudio3() { 
+  z.play(); 
+}
+
+function playAudio4() { 
+  a.play(); 
+}
+
+function playAudio5() { 
+  b.play(); 
+}
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+
+function pauseAudio2() { 
+  y.pause(); 
+}
+
+function pauseAudio3() { 
+  z.pause(); 
+}
+
+function pauseAudio4() { 
+  a.pause(); 
+}
+
+function pauseAudio5() { 
+  b.pause(); 
+}
+</script>
+
+</body>
