@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Say the Superhero Name of the Respective Person</p>
+    <p>Say "Help" for help</p>
+    <p>Say "About" to hear creator</p>
+    <button id='btnGiveCommand'>Speak!</button>
+    <br><br>
+    <span id='message'></span>
+    <br><br>
+    
+    <input id='chkSteve' type="checkbox"> Steve Rogers
+    <br>
+    <input id='chkTony' type="checkbox"> Tony Stark
+    <br>
+    <input id='chkBruce' type="checkbox"> Bruce Banner
+    <br>
+    <input id='chkScott' type="checkbox"> Scott Lang
+    
+    <script>
+        var message = document.querySelector('#message');
+
+        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+        var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+
+        var grammar = '#JSGF V1.0;'
+        var cap_img=new Image();
+
+        cap_img.src='assets/captain.jpg';
+
+        var recognition = new SpeechRecognition();
+        var speechRecognitionList = new SpeechGrammarList();
+        speechRecognitionList.addFromString(grammar, 1);
+        recognition.grammars = speechRecognitionList;
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+
+        recognition.onresult = function(event) {
+            var last = event.results.length - 1;
+            var command = event.results[last][0].transcript;
+            message.textContent = 'Voice Input: ' + command + '.';
+
+            if(command.toLowerCase() === 'captain america'){
+                document.querySelector('#chkSteve').checked = true;
+                ctx.displayImage(cap_img,50,50);
+            }
+            else if (command.toLowerCase() === 'iron man '){
+                document.querySelector('#chkTony').checked = true;
+            }
+            else if (command.toLowerCase() === 'hulk'){
+                document.querySelector('#chkBruce').checked = true;
+            }
+            else if (command.toLowerCase() === 'ant man'){
+                document.querySelector('#chkScott').checked = true;
+            } 
+            else if (command.toLowerCase() === 'help'){
+                var msg = new SpeechSynthesisUtterance();
+                msg.text = "Say the superhero name of the respective person";
+                window.speechSynthesis.speak(msg);
+            }
+            else if (command.toLowerCase() === 'about'){
+                var msg = new SpeechSynthesisUtterance();
+                msg.text = "Written by Muhammad Hasnain with the help of many online sources. I did what I could given I've been so busy with work and college. It was a fun semester Professor.";
+                window.speechSynthesis.speak(msg);
+            }   
+        };
+
+        recognition.onspeechend = function() {
+            recognition.stop();
+        };
+
+        recognition.onerror = function(event) {
+            message.textContent = 'Error occurred in recognition: ' + event.error;
+        }        
+
+        document.querySelector('#btnGiveCommand').addEventListener('click', function(){
+            recognition.start();
+
+        });
+
+
+    </script>
+</body>
+</html>
